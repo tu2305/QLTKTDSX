@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <menuitem id="menu_via" name="Vỉa" parent="menu_dm_dia_diem_lam_viec" sequence="10"
+                  action="act_open_via_view"/>
+        <menuitem id="menu_tang" name="Tầng" parent="menu_dm_dia_diem_lam_viec" sequence="20"
+                  action="act_open_tang_view"/>
+        <menuitem id="menu_chat_tai" name="Địa điểm chất tải" parent="menu_dm_dia_diem_lam_viec" sequence="30"
+                  action="act_open_chat_tai_view"/>
+        <menuitem id="menu_ha_tai" name="Địa điểm hạ tải" parent="menu_dm_dia_diem_lam_viec" sequence="40"
+                  action="act_open_ha_tai_view"/>
+        <menuitem id="menu_bai_thai" name="Địa điểm bãi thải" parent="menu_dm_dia_diem_lam_viec" sequence="50"
+                  action="act_open_bai_thai_view"/>
+        <menuitem id="menu_che_bien" name="Địa điểm chế biến" parent="menu_dm_dia_diem_lam_viec" sequence="60"
+                  action="act_open_che_bien_view"/>
+    </data>
+</odoo>

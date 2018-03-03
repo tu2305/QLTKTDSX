@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <menuitem id="menu_hang" name="Hàng chế biến/vận chuyển" parent="menu_dm_hang" sequence="40"
+                  action="act_open_hang_view"/>
+        <menuitem id="menu_dat" name="Đất" parent="menu_dm_hang" sequence="10" action="act_open_dat_view"/>
+        <menuitem id="menu_than" name="Than" parent="menu_dm_hang" sequence="20" action="act_open_than_view"/>
+        <menuitem id="menu_thai" name="Thải" parent="menu_dm_hang" sequence="30" action="act_open_thai_view"/>
+    </data>
+</odoo>

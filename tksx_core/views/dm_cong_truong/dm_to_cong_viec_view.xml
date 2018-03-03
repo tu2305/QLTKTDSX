@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_dm_to_cong_viec_tree" model="ir.ui.view">
+            <field name="name">dm.to.cong.viec.tree</field>
+            <field name="model">dm.tocongviec</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Tổ Công Việc">
+                    <field name="maTo"/>
+                    <field name="tenTo"/>
+                    <field name="moTa"/>
+                    <field name="maCT"/>
+                    <field name="maPX"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_dm_to_cong_viec_form" model="ir.ui.view">
+            <field name="name">dm.to.cong.viec.form</field>
+            <field name="model">dm.tocongviec</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Tổ công việc">
+                    <sheet>
+                        <group col="4" name="main">
+                            <field name="maTo"/>
+                            <field name="tenTo"/>
+                            <field name="maCT"/>
+                            <field name="maPX"/>
+                        </group>
+                        <group colspan="4" name="des">
+                            <field name="moTa"/>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_dm_to_cong_viec_search" model="ir.ui.view">
+            <field name="name">dm.to.cong.viec.search</field>
+            <field name="model">dm.tocongviec</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Tổ công việc">
+                    <field name="maTo"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_dm_to_cong_viec_view">
+            <field name="name">Tổ công việc</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dm.tocongviec</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_dm_to_cong_viec_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_dm_to_cong_viec_form_view">
+            <field name="act_window_id" ref="act_open_dm_to_cong_viec_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_dm_to_cong_viec_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_dm_to_cong_viec_tree_view">
+            <field name="act_window_id" ref="act_open_dm_to_cong_viec_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_dm_to_cong_viec_tree"/>
+        </record>
+    </data>
+</odoo>

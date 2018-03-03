@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_dinh_muc_nhien_lieu_tree" model="ir.ui.view">
+            <field name="name">dinh.muc.nhien.lieu.tree</field>
+            <field name="model">dm.nhienlieu</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Định mức nhiên liệu">
+                    <field name="maDM"/>
+                    <field name="DMDau"/>
+                    <field name="DMGio"/>
+                    <field name="moTa"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_dinh_muc_nhien_lieu_form" model="ir.ui.view">
+            <field name="name">dinh.muc.nhien.lieu.form</field>
+            <field name="model">dm.nhienlieu</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Định mức nhiên liệu">
+                    <sheet>
+                        <group col="4" name="main">
+                            <field name="maDM"/>
+                            <field name="DMDau"/>
+                            <field name="DMGio"/>
+                        </group>
+
+                        <group colspan="4" name="des">
+                            <field name="moTa"/>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_dinh_muc_nhien_lieu_search" model="ir.ui.view">
+            <field name="name">dinh.muc.nhien.lieu.search</field>
+            <field name="model">dm.nhienlieu</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Định mức nhiên liệu">
+                    <field name="maDM"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_dinh_muc_nhien_lieu_view">
+            <field name="name">Công Trường</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dm.nhienlieu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_dinh_muc_nhien_lieu_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_dinh_muc_nhien_lieu_form_view">
+            <field name="act_window_id" ref="act_open_dinh_muc_nhien_lieu_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_dinh_muc_nhien_lieu_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_dinh_muc_nhien_lieu_tree_view">
+            <field name="act_window_id" ref="act_open_dinh_muc_nhien_lieu_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_dinh_muc_nhien_lieu_tree"/>
+        </record>
+    </data>
+</odoo>

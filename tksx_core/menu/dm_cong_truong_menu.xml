@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_cong_truong" name="Công trường" sequence="10" action="act_open_dm_cong_truong_view"
+                  parent="menu_danh_muc_cong_truong"/>
+        <menuitem id="menu_phan_xuong" name="Phân xưởng" sequence="20" action="act_open_dm_phan_xuong_view"
+                  parent="menu_danh_muc_cong_truong"/>
+        <menuitem id="menu_to_cong_viec" name="Tổ công việc" sequence="30" action="act_open_dm_to_cong_viec_view"
+                  parent="menu_danh_muc_cong_truong"/>
+        <menuitem id="menu_nhan_su" name="Nhân sự" sequence="40" action="act_open_dm_nhan_su_view"
+                  parent="menu_danh_muc_cong_truong"/>
+    </data>
+</odoo>

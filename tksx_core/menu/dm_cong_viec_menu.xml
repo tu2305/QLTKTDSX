@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_cong_viec" name="Công việc" sequence="5" action="act_open_cong_viec_view"
+                  parent="menu_danh_muc"/>
+    </data>
+</odoo>

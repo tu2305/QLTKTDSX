@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_bai_thai_tree" model="ir.ui.view">
+            <field name="name">bai_thai.tree</field>
+            <field name="model">dm.baithai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Địa điểm bãi thải">
+                    <field name="ma_bai_thai"/>
+                    <field name="ten_bai_thai"/>
+                    <field name="cao_do"/>
+                    <field name="ma_tang"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_bai_thai_form" model="ir.ui.view">
+            <field name="name">bai_thai.form</field>
+            <field name="model">dm.baithai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Địa điểm bãi thải">
+                    <sheet>
+                        <group col="4">
+                            <field name="ma_bai_thai"/>
+                            <field name="ten_bai_thai"/>
+                            <field name="cao_do"/>
+                            <field name="ma_tang"/>
+                        </group>
+                        <group>
+                            <field name="mo_ta"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_bai_thai_search" model="ir.ui.view">
+            <field name="name">bai_thai.search</field>
+            <field name="model">dm.baithai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Địa điểm bãi thải">
+                    <field name="ten_bai_thai"/>
+                    <field name="ma_bai_thai"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_bai_thai_view">
+            <field name="name">Địa điểm bãi thải</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dm.baithai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_bai_thai_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_bai_thai_view_form">
+            <field name="act_window_id" ref="act_open_bai_thai_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_bai_thai_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_bai_thai_view_tree">
+            <field name="act_window_id" ref="act_open_bai_thai_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_bai_thai_tree"/>
+        </record>
+    </data>
+</odoo>

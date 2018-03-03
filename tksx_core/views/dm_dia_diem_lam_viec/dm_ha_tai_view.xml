@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_ha_tai_tree" model="ir.ui.view">
+            <field name="name">ha_tai.tree</field>
+            <field name="model">dm.hatai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Địa điểm hạ tải">
+                    <field name="ma_ha_tai"/>
+                    <field name="ten_ha_tai"/>
+                    <field name="ma_via"/>
+                    <field name="ma_tang"/>
+                    <field name="cao_do"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_ha_tai_form" model="ir.ui.view">
+            <field name="name">ha_tai.form</field>
+            <field name="model">dm.hatai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Địa điểm hạ tải">
+                    <sheet>
+                        <group col="4">
+                            <field name="ma_ha_tai"/>
+                            <field name="ten_ha_tai"/>
+                            <field name="ma_via"/>
+                            <field name="ma_tang"/>
+                            <field name="cao_do"/>
+                        </group>
+                        <group>
+                            <field name="mo_ta"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="view_ha_tai_search" model="ir.ui.view">
+            <field name="name">ha_tai.search</field>
+            <field name="model">dm.hatai</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Địa điểm hạ tải">
+                    <field name="ten_ha_tai"/>
+                    <field name="ma_ha_tai"/>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_ha_tai_view">
+            <field name="name">Địa điểm hạ tải</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dm.hatai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_ha_tai_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_ha_tai_view_form">
+            <field name="act_window_id" ref="act_open_ha_tai_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_ha_tai_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_ha_tai_view_tree">
+            <field name="act_window_id" ref="act_open_ha_tai_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_ha_tai_tree"/>
+        </record>
+    </data>
+</odoo>

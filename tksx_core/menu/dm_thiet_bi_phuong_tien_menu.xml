@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_xe" name="Xe" sequence="40" action="act_open_dm_xe_view" parent="menu_thiet_bi_phuong_tien"/>
+        <menuitem id="menu_ma_loai_xe" name="Mã loại xe" sequence="30" action="act_open_dm_ma_loai_xe_view"
+                  parent="menu_thiet_bi_phuong_tien"/>
+        <menuitem id="menu_chung_loai_xe" name="Chủng loại xe" sequence="20" action="act_open_dm_chung_loai_xe_view"
+                  parent="menu_thiet_bi_phuong_tien"/>
+        <menuitem id="menu_chat_luong_xe" name="Chất lượng xe" sequence="10" action="act_open_dm_chat_luong_xe_view"
+                  parent="menu_thiet_bi_phuong_tien"/>
+    </data>
+</odoo>

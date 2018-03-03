@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="menu_dinh_muc" name="Định mức" sequence="10"/>
+        <menuitem id="menu_nhien_lieu" name="Định mức nhiên liệu" sequence="20" action="act_open_dinh_muc_nhien_lieu_view"
+                  parent="menu_dinh_muc"/>
+
+    </data>
+</odoo>
